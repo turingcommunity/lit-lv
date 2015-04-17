@@ -1,7 +1,13 @@
 <table style="width:100%">
   <tr>
-    <th>calendars</th>
     <th>announcements</th>
     <th>events</th>
+    <th>calendar</th>
   </tr>
+  <% @leader_information.each do |info| %>
+    <tr>
+      <td> <%= info.announcement %></td>
+      <td> <%= info.event %></td>
+    </tr>
+  <% end %>
 </table>
