@@ -25,6 +25,7 @@ end
 
 class ActionDispatch::IntegrationTest
   include FactoryGirl::Syntax::Methods
+  include Rails.application.routes.url_helpers
   include Capybara::DSL
 
   def setup
