@@ -1,6 +1,6 @@
 require "test_helper"
 
-class UserDashboardTest < IntegrationTest
+class UserDashboardTest < ActionDispatch::IntegrationTest
   def test_user_sees_header_for_annoucements
     visit root_path
     within(".announcements") do
