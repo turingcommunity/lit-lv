@@ -1,12 +1,14 @@
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
-require "capybara/rails"
-require "minitest/pride"
-require "minitest/autorun"
-require "factory_girl_rails"
-require "database_cleaner"
-require "date"
+require 'capybara/rails'
+require 'minitest/pride'
+require 'minitest/autorun'
+require 'factory_girl_rails'
+require 'database_cleaner'
+require 'date'
+require 'simplecov'
+SimpleCov.start
 
 class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods

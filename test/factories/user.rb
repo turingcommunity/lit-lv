@@ -1,10 +1,17 @@
 FactoryGirl.define do
   factory :user do
-    username "username"
-    first_name "first_name"
-    password "password"
-    email "email@gmail.com"
-    phone "111-111-1111"
-    role 1
+    username 'richard'
+    first_name 'richard'
+    password 'password'
+    email 'richard@turing.io'
+    phone '333-333-3333'
+
+    trait :basic do
+      role 1
+    end
+
+    trait :admin do
+      role 0
+    end
   end
 end
