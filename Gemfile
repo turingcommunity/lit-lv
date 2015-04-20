@@ -11,7 +11,7 @@ gem 'sdoc',                     '~> 0.4.0', group: :doc
 gem 'bcrypt',                   '~> 3.1.7'
 gem 'bootstrap-sass',           '~> 3.3.3'
 gem 'autoprefixer-rails'
-gem "simple_calendar", "~> 1.1.0"
+gem 'simple_calendar', '~> 1.1.0'
 
 group :development, :test do
   gem 'byebug'
@@ -22,5 +22,6 @@ group :development, :test do
   gem "factory_girl_rails",     '~> 4.0'
   gem 'bcrypt-ruby',            '~> 3.1.5'
   gem 'database_cleaner',       '~> 1.4.0'
-  gem "pry"
+  gem 'pry'
+  gem 'simplecov'
 end

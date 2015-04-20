@@ -1,6 +1,26 @@
+Hello <%= session[:username] %>
 <h1 class="announcements">Announcements</h1>
 <div class="calendar">
 <%= month_calendar do |date| %>
   <%= date %>
 <% end %>
 </div>
+
+<%= form_for(:session, url: login_path) do |f| %>
+  <div class="form-group">
+    <%= f.label :email, class: "col-sm-4 control-label" %>
+    <div class="col-sm-8">
+      <%= f.email_field :email, class: "form-control logout" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :password, class: "col-sm-4 control-label" %>
+    <div class="col-sm-8">
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+    <div class="col-sm-2 form-group">
+      <%= f.submit "Log In", class: "btn btn-default login" %>
+    </div>
+  </div>
+<% end %>
+<%= link_to('Logout', logout_path, :method => :get, class: "btn btn-default logout") %>

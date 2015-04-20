@@ -24,7 +24,7 @@ class Admin::NewAnnouncementsTest < ActionDispatch::IntegrationTest
   end
 
   test "an admin user can create a new announcement using the form and be
-    redirectd back to the announcement index page" do
+    redirected back to the announcement index page" do
     visit new_admin_announcement_path
     fill_in "announcement[title]", with: "Title"
     fill_in "announcement[body]", with: "Body Content"

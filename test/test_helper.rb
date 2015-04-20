@@ -7,6 +7,8 @@ require "minitest/autorun"
 require "factory_girl_rails"
 require "database_cleaner"
 require "date"
+require 'simplecov'
+SimpleCov.start
 
 class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
