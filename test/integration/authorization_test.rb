@@ -4,7 +4,7 @@ class LoginTest < ActionDispatch::IntegrationTest
   test "you can login as a registered user" do
     user = create(:user)
     visit root_path
-    fill_in "session[email]", with: "richard@turing.io"
+    fill_in "session[email_address]", with: "richard@turing.io"
     fill_in "session[password]", with: "password"
     click_button "Log In"
     assert_equal root_path, current_path
@@ -14,7 +14,7 @@ class LoginTest < ActionDispatch::IntegrationTest
   test "you can login as a registered admin" do
     user = create(:user)
     visit root_path
-    fill_in "session[email]", with: "richard@turing.io"
+    fill_in "session[email_address]", with: "richard@turing.io"
     fill_in "session[password]", with: "password"
     click_button "Log In"
     assert_equal root_path, current_path
@@ -24,7 +24,7 @@ class LoginTest < ActionDispatch::IntegrationTest
   test "you cannot login as a unregistered user" do
     user = create(:user)
     visit root_path
-    fill_in "session[email]", with: "bob@turing.io"
+    fill_in "session[email_address]", with: "bob@turing.io"
     fill_in "session[password]", with: "password"
     click_button "Log In"
     assert_equal root_path, current_path
@@ -34,7 +34,7 @@ class LoginTest < ActionDispatch::IntegrationTest
   test "you can logout" do
     user = create(:user)
     visit root_path
-    fill_in "session[email]", with: "richard@turing.io"
+    fill_in "session[email_address]", with: "richard@turing.io"
     fill_in "session[password]", with: "password"
     click_button "Log In"
     assert_equal root_path, current_path

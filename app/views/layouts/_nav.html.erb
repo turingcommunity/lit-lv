@@ -1,0 +1,21 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand title">LIT-LV</a>
+    </div>
+      <div class="navbar-form navbar-right" role="search">
+        <% if current_user  %>
+          <a class="navbar-brand navbar-right pull-left">Welcome <%= current_user.first_name.capitalize %></a>
+          <%= link_to "Logout", logout_path, class: "btn btn-default navbar-right" %>
+        <% else %>
+          <%= form_for :session, url: login_path, :method => :post do |f| %>
+            <%= f.text_field(:email_address, placeholder: "email address", class: "form-control navbar_style") %>
+            <%= f.password_field :password, placeholder: "password", class: "form-control navbar_style" %>
+            <%= f.submit "Log In" , class: "btn btn-default navbar_style nav-link" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>
+<div id="name" style="margin-top:50px"></div>
