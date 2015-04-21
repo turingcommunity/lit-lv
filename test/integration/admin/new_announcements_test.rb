@@ -47,7 +47,7 @@ class Admin::NewAnnouncementsTest < ActionDispatch::IntegrationTest
     click_button 'Submit'
 
     assert_equal admin_announcements_path, current_path
-    assert page.has_content?('[\'Title can\'t be blank\']')
+    assert page.has_content?("[\"Title can\'t be blank\"]")
   end
 
   test 'an admin can not create an announcement without body' do
@@ -58,7 +58,7 @@ class Admin::NewAnnouncementsTest < ActionDispatch::IntegrationTest
     click_button 'Submit'
 
     assert_equal admin_announcements_path, current_path
-    assert page.has_content?('[\'Body can\'t be blank\']')
+    assert page.has_content?("[\"Body can\'t be blank\"]")
   end
 
   test 'an admin can not create an announcement without expiration date' do
@@ -70,7 +70,7 @@ class Admin::NewAnnouncementsTest < ActionDispatch::IntegrationTest
 
     assert_equal admin_announcements_path, current_path
     save_and_open_page
-    assert page.has_content?('[\'Expiration date can\'t be blank\']')
+    assert page.has_content?("[\"Expiration date can\'t be blank\"]")
   end
 
   test 'an admin can not create an announcement without created by' do
@@ -81,6 +81,7 @@ class Admin::NewAnnouncementsTest < ActionDispatch::IntegrationTest
     click_button 'Submit'
 
     assert_equal admin_announcements_path, current_path
-    assert page.has_content?('[\'Created by can\'t be blank\']')
+    save_and_open_page
+    assert page.has_content?("[\"Created by can\'t be blank\"]")
   end
 end
