@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       session[:username] = user.username
       flash[:success] = 'You have successfully logged in'
-      redirect_to root_path
+      redirect_to dashboard_index_path
     else
       flash[:errors] = 'Invalid login'
       redirect_to :back
