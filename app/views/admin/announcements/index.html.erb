@@ -1,0 +1,14 @@
+<div class='form-title'>
+  <h1>All Announcements</h1>
+  <p><em>Here is a list of all current announcements</em></p>
+</div>
+
+<div class='announcement-index'>
+  <% @announcements.each do |announcement| %>
+  <u>Title:</u> <%= announcement.title %> <br>
+  <u>Body:</u> <%= announcement.body %> <br>
+  <u>Expiration_Date: </u> <%= announcement.expiration_date %> <br>
+  <u>Created_By:</u> <%= announcement.created_by %> <br>
+  <br>
+  <% end %>
+</div>
