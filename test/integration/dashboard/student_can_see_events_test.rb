@@ -12,10 +12,14 @@ class User::NewEventsTest < ActionDispatch::IntegrationTest
                           description: "Museum of Nature and Science",
                           location: "LV Museum"
                             )
-    visit login_path
-    fill_in "user[email_address]", with: "richard@turing.io"
-    fill_in "user[password]", with: "password"
+    visit '/'
+    fill_in "session[username]", with: "richard@turing.io"
+    fill_in "session[password]", with: "password"
+    click_button "Log In"
     visit event_path(event)
-    assert page.has_content?("Museum of Nature and Science")    
+    save_and_open_page
+    assert page.has_content?("Museum Outing") 
+    assert page.has_content?("Museum of Nature and Science")
+    assert page.has_content?("LV Museum")   
   end
 end
