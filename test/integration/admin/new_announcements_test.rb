@@ -2,7 +2,7 @@ require 'test_helper'
 
 class Admin::NewAnnouncementsTest < ActionDispatch::IntegrationTest
   test 'an admin user can create a new announcement' do
-    user = create(:user, role:1)
+    user = create(:user, :admin)
 
     get new_admin_announcement_path
     assert_template 'admin/announcements/new'
@@ -69,7 +69,6 @@ class Admin::NewAnnouncementsTest < ActionDispatch::IntegrationTest
     click_button 'Submit'
 
     assert_equal admin_announcements_path, current_path
-    save_and_open_page
     assert page.has_content?("[\"Expiration date can\'t be blank\"]")
   end
 
@@ -81,7 +80,6 @@ class Admin::NewAnnouncementsTest < ActionDispatch::IntegrationTest
     click_button 'Submit'
 
     assert_equal admin_announcements_path, current_path
-    save_and_open_page
     assert page.has_content?("[\"Created by can\'t be blank\"]")
   end
 end
