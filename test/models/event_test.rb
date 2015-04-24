@@ -34,4 +34,39 @@ class EventTest < ActiveSupport::TestCase
   def test_it_has_a_location
     assert_equal "UNLV", event.location
   end
+
+  def test_it_is_not_valid_without_start_date
+    event.start_date = nil
+    refute event.start_date
+  end
+
+  def test_it_is_not_valid_without_name
+    event.name = nil
+    refute event.name
+  end
+
+  def test_it_is_invalid_without_a_start_time
+    event.start_time = nil
+    refute event.start_time
+  end
+
+  def test_it_is_invalid_without_a_end_date
+    event.end_date = nil
+    refute event.end_date
+  end
+
+  def test_it_is_invalid_without_a_end_time
+    event.end_time = nil
+    refute event.end_time
+  end
+
+  def test_it_is_not_valid_without_description
+    event.description = nil
+    refute event.description
+  end
+
+  def test_it_is_not_valid_without_location
+    event.location = nil
+    refute event.location
+  end
 end
