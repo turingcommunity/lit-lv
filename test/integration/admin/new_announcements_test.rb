@@ -69,7 +69,6 @@ class Admin::NewAnnouncementsTest < ActionDispatch::IntegrationTest
     click_button 'Submit'
 
     assert_equal admin_announcements_path, current_path
-    save_and_open_page
     assert page.has_content?("[\"Expiration date can\'t be blank\"]")
   end
 
@@ -81,7 +80,6 @@ class Admin::NewAnnouncementsTest < ActionDispatch::IntegrationTest
     click_button 'Submit'
 
     assert_equal admin_announcements_path, current_path
-    save_and_open_page
     assert page.has_content?("[\"Created by can\'t be blank\"]")
   end
 end

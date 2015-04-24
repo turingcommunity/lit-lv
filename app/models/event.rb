@@ -1,8 +1,11 @@
 require 'byebug'
 
 class Event < ActiveRecord::Base
-
-  def start_date
-    Event.start_date
-  end
+  validates :start_date, 
+            :start_time, 
+            :end_date,  
+            :end_time,
+            :name,
+            :description,
+            :location, presence: true
 end
