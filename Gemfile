@@ -23,4 +23,5 @@ group :development, :test do
   gem 'database_cleaner',       '~> 1.4.0'
   gem 'pry'
   gem 'simplecov'
+  gem 'faker'
 end

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class Admin::NewAnnouncementsTest < ActionDispatch::IntegrationTest
   test 'an admin user can create a new announcement' do
-    user = create(:user, role:1)
+    user = create(:user, :admin)
 
     get new_admin_announcement_path
     assert_template 'admin/announcements/new'

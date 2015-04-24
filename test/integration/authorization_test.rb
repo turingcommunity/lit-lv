@@ -2,7 +2,7 @@ require 'test_helper'
 
 class LoginTest < ActionDispatch::IntegrationTest
   test 'you can login as a registered user' do
-    user = create(:user, :basic)
+    user = create(:user, :default)
     visit root_path
     fill_in 'session[username]', with: 'richard'
     fill_in 'session[password]', with: 'password'
@@ -22,7 +22,7 @@ class LoginTest < ActionDispatch::IntegrationTest
   end
 
   test 'you cannot login as a unregistered user' do
-    user = create(:user, :basic)
+    user = create(:user, :default)
     visit root_path
     fill_in 'session[username]', with: 'bob'
     fill_in 'session[password]', with: 'password'
@@ -32,7 +32,7 @@ class LoginTest < ActionDispatch::IntegrationTest
   end
 
   test 'you can logout' do
-    user = create(:user, :basic)
+    user = create(:user, :default)
     visit root_path
     fill_in 'session[username]', with: 'richard'
     fill_in 'session[password]', with: 'password'
