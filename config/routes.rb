@@ -6,6 +6,7 @@ get '/logout', to: 'sessions#destroy'
   namespace :admin do
     get '/dashboard', to: 'base#dashboard'
     resources :announcements
+    resources :events
   end
   resources :dashboard
 end

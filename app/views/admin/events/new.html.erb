@@ -1,0 +1,43 @@
+<%= render 'datepicker_jqy' %>
+
+<div class='row form-title'>
+  <h1 class='form-header'>New Event Form</h1>
+  <h4><em>Please fill out all fields</em></h4>
+</div>
+
+<!-- <div class='row'> -->
+<%= form_for(:event, url: admin_events_path, :html => {:class => 'form-horizontal center'}) do |f| %>
+  <div class="form-group date-select"> 
+      
+  <div>   
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "Name" %>
+  </div> 
+
+  <div>  
+    <%= f.label :description %>
+    <%= f.text_field :description, placeholder: "Description" %>
+  </div> 
+
+  <div>  
+    <%= f.label :location %>
+    <%= f.text_field :location, placeholder: "Location" %>
+  </div> 
+
+  <form>
+    <%= f.label :start_date %>
+    <%= f.text_field :start_date, placeholder: "Start Date", id: "datepicker" %>
+  </form>
+
+  <form>
+  <%= f.label :end_date %>
+  <%= f.text_field :end_date, placeholder: "End Date", id: "datepicker2" %>
+  </form>
+      
+  <div class='form-group'>
+    <%= f.submit 'Submit', class: 'btn btn-default btn-primary col-md-2 col-md-offset-4' %>
+  </div>
+  <% end %> 
+</div>
+
+
