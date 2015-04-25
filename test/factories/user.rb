@@ -6,7 +6,7 @@ FactoryGirl.define do
     email 'richard@turing.io'
     phone '333-333-3333'
 
-    trait :basic do
+    trait :default do
       role 1
     end
 

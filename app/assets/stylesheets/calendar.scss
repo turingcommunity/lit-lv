@@ -1,0 +1,33 @@
+.calendar{
+  header{
+    font-size:1.5em;
+    margin:10px;
+    span{
+      margin:0 5px;
+    }
+  }
+  table{
+    width:60%;
+    height:60%;
+    thead tr{
+      border:3px solid black;
+      th{
+        border:1px solid black;
+      }
+    }
+    th{
+      text-align:center;
+    }
+    tr{
+      height:70px;
+      td{
+        border:1px solid black;
+        width:30px;
+        text-align:right;
+        padding-top:50px;
+        padding-right:5px;
+      }
+    }
+  }
+}
+

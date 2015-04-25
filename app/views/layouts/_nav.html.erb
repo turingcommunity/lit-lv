@@ -13,7 +13,7 @@
           <%= link_to 'Logout', logout_path, class: 'btn btn-default navbar-right' %>
         <% else %>
           <%= form_for :session, url: login_path, :method => :post do |f| %>
-            <%= f.text_field(:email_address, placeholder: 'email address', class: 'form-control navbar_style') %>
+            <%= f.text_field(:username, placeholder: 'username', class: 'form-control navbar_style') %>
             <%= f.password_field :password, placeholder: 'password', class: 'form-control navbar_style' %>
             <%= f.submit 'Log In' , class: 'btn btn-default navbar_style nav-link' %>
           <% end %>
