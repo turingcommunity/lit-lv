@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  enum role: %w(default, admin)
+  enum role: %w(default admin)
 
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true

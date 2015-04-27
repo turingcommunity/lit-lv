@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class User::NewEventsTest < ActionDispatch::IntegrationTest
   test 'a student can see a single event that is displayed' do 
@@ -9,9 +9,8 @@ class User::NewEventsTest < ActionDispatch::IntegrationTest
                          end_time: "5:00 PM",
                          name: "Museum Outing",
                          description: "Museum of Nature and Science",
-                         location: "LV Museum"
-                            )
-    visit '/'
+                         location: "LV Museum")
+    visit "/"
     fill_in "session[username]", with: "richard@turing.io"
     fill_in "session[password]", with: "password"
     click_button "Log In"
@@ -20,4 +19,5 @@ class User::NewEventsTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Museum of Nature and Science")
     assert page.has_content?("LV Museum")   
   end
+
 end
