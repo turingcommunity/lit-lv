@@ -13,4 +13,5 @@ class User::NewEventsTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Museum of Nature and Science")
     assert page.has_content?("LV Museum")   
   end
+
 end
