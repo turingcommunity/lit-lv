@@ -2,13 +2,16 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(username: params[:session][:username])
-    if user && user.authenticate(params[:session][:password])
+    if user && user.admin? && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      session[:username] = user.username
-      flash[:success] = 'You have successfully logged in'
+      flash[:success] = 'You have successfully logged in.'
+      redirect_to admin_dashboard_path
+    elsif user && user.authenticate(params[:session][:password])
+      session[:user_id] = user.id
+      flash[:success] = 'You have successfully logged in.'
       redirect_to dashboard_index_path
     else
-      flash[:errors] = 'Invalid login'
+      flash[:errors] = 'Invalid login. Please try again.'
       redirect_to :back
     end
   end

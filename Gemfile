@@ -16,7 +16,6 @@ gem 'simple_calendar', '~> 1.1.0'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
-  gem 'spring'
   gem 'capybara'
   gem 'launchy'
   gem 'factory_girl_rails',     '~> 4.0'
