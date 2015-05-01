@@ -7,11 +7,11 @@ FactoryGirl.define do
     phone '333-333-3333'
 
     trait :default do
-      role 1
+      role 0
     end
 
     trait :admin do
-      role 0
+      role 1
     end
   end
 end
