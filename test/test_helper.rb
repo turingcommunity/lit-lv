@@ -40,3 +40,5 @@ class ActionDispatch::IntegrationTest
     DatabaseCleaner.clean
   end
 end
+
+

@@ -8,9 +8,19 @@ class Admin::EventsController < ApplicationController
     
   end
 
+  def show
+  end
+
 
   def create
-    
-    redirect_to admin_dashboard_path
+    # announcement = Announcement.new(announcement_params)
+    # if announcement.save
+    #   flash[:notice] = 'Your announcement was successfully created'
+    #   redirect_to admin_announcements_path
+    # else
+    #   flash[:error] = announcement.errors.full_messages
+    #   render :new
+    # end
+    redirect_to admin_events_path
   end
 end
