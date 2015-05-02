@@ -1,26 +1,29 @@
 class Admin::EventsController < ApplicationController
   
   def new
-    
   end
 
   def index
-    
+    @events = Event.all
   end
 
   def show
   end
 
-
   def create
-    # announcement = Announcement.new(announcement_params)
-    # if announcement.save
-    #   flash[:notice] = 'Your announcement was successfully created'
-    #   redirect_to admin_announcements_path
-    # else
-    #   flash[:error] = announcement.errors.full_messages
-    #   render :new
-    # end
-    redirect_to admin_events_path
+    event = Event.new(event_params)
+    if event.save
+      flash[:notice] = 'Your event was successfully created'
+      redirect_to admin_events_path
+    else
+      flash[:error] = event.errors.full_messages
+      render :new
+    end
+  end
+
+  private
+  def event_params
+    params.require(:event).permit(:start_date, :start_time, :end_date, :end_time, 
+                    :name, :description, :location)
   end
 end
