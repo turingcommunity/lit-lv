@@ -8,4 +8,5 @@ class Event < ActiveRecord::Base
             :name,
             :description,
             :location, presence: true
+  belongs_to :user
 end

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
+  resources :events, only: [:show]
+
   namespace :admin do
     get '/dashboard', to: 'base#dashboard'
     resources :announcements

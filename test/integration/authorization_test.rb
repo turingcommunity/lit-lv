@@ -17,7 +17,7 @@ class LoginTest < ActionDispatch::IntegrationTest
     fill_in "session[username]", with: "richard"
     fill_in "session[password]", with: "password"
     click_button "Log In"
-    assert_equal dashboard_index_path, current_path
+    assert_equal admin_dashboard_path, current_path
     assert page.has_content?("You have successfully logged in")
   end
 
