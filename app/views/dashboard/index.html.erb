@@ -1,6 +1,10 @@
 <h1 class='announcements'>Announcements</h1>
 <div class='calendar'>
-<%= month_calendar do |date| %>
-  <%= date.day %>
+<%= month_calendar(events: @events, table: {class: "table table-bordered"}) do |date, events| %>
+  <%= date.strftime("%e") %>
+  <% events.each do |event| %>
+    <div>
+      <%= link_to event.short_name, event %>
+    </div>
+  <% end %>
 <% end %>
-</div>

@@ -6,6 +6,7 @@ class Seed
   def generate
     create_students
     create_admin
+    create_events
   end
 
   def create_students
@@ -33,6 +34,17 @@ class Seed
                 phone: Faker::PhoneNumber.phone_number,
                 role: 1)
     puts "Admin created. Username: admin, password: password."
+  end
+
+  def create_events
+    10.times do |x|
+      date = Faker::Time.between(x.days.ago, Date.today)
+      Event.create(name: Faker::Company.catch_phrase,
+                   description: Faker::Lorem.paragraph,
+                   location: Faker::Address.street_address,
+                   starts_at: date,
+                   ends_at: date) 
+    end
   end
 end
 

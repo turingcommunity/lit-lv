@@ -23,4 +23,5 @@ group :development, :test do
   gem 'pry'
   gem 'simplecov'
   gem 'faker'
+  gem 'mocha'
 end

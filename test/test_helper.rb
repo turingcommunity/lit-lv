@@ -8,6 +8,8 @@ require 'factory_girl_rails'
 require 'database_cleaner'
 require 'date'
 require 'simplecov'
+require 'mocha/test_unit'
+
 SimpleCov.start
 
 class ActiveSupport::TestCase

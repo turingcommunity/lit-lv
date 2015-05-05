@@ -1,9 +1,7 @@
 FactoryGirl.define do
   factory :event do
-    start_date "08/06/2015"
-    start_time "8:00am"
-    end_date "08/07/2015"
-    end_time "10:30am"
+    starts_at "2015-08-06 09:08:45 -0600"
+    ends_at "2015-08-06 12:08:45 -0600"
     name "College Visit"
     description "Students will travel to UNLV for tour."
     location "UNLV"

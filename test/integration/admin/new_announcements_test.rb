@@ -1,30 +1,17 @@
 require 'test_helper'
 
 class Admin::NewAnnouncementsTest < ActionDispatch::IntegrationTest
-  test 'an admin user can create a new announcement' do
-    user = create(:user, :admin)
-
-    get new_admin_announcement_path
-    assert_template 'admin/announcements/new'
-    title = 'Title'
-    body = 'Body'
-    expiration_date = Date.new(2015,5,5)
-    created_by = 'Admin'
-    assert_difference 'Announcement.count', 1 do
-      post_via_redirect admin_announcements_path, { announcement:
-                                      { title: title,
-                                        body: body,
-                                        expiration_date: expiration_date,
-                                        created_by: created_by
-                                      }
-                                    }
-    end
-    refute flash.empty?
-    assert_template 'admin/announcements/index'
+  def login_admin
+    FactoryGirl.create(:user, :admin)
+    visit '/'
+    fill_in "session[username]", with: "richard"
+    fill_in "session[password]", with: "password"
+    click_button "Log In"
   end
 
   test 'an admin user can create a new announcement using the form and be
     redirected back to the announcement index page' do
+    login_admin
     visit new_admin_announcement_path
     fill_in 'announcement[title]', with: 'Title'
     fill_in 'announcement[body]', with: 'Body Content'
@@ -40,6 +27,7 @@ class Admin::NewAnnouncementsTest < ActionDispatch::IntegrationTest
   end
 
   test 'an admin can not create an announcement without title' do
+    login_admin
     visit new_admin_announcement_path
     fill_in 'announcement[body]', with: 'Body Content'
     fill_in 'announcement[expiration_date]', with: '2015-04-20 21:49:34 -0600'
@@ -51,6 +39,7 @@ class Admin::NewAnnouncementsTest < ActionDispatch::IntegrationTest
   end
 
   test 'an admin can not create an announcement without body' do
+    login_admin
     visit new_admin_announcement_path
     fill_in 'announcement[title]', with: 'Title'
     fill_in 'announcement[expiration_date]', with: '2015-04-20 21:49:34 -0600'
@@ -62,6 +51,7 @@ class Admin::NewAnnouncementsTest < ActionDispatch::IntegrationTest
   end
 
   test 'an admin can not create an announcement without expiration date' do
+    login_admin
     visit new_admin_announcement_path
     fill_in 'announcement[title]', with: 'Title'
     fill_in 'announcement[body]', with: 'Body Content'
@@ -73,6 +63,7 @@ class Admin::NewAnnouncementsTest < ActionDispatch::IntegrationTest
   end
 
   test 'an admin can not create an announcement without created by' do
+    login_admin
     visit new_admin_announcement_path
     fill_in 'announcement[title]', with: 'Title'
     fill_in 'announcement[body]', with: 'Body Content'

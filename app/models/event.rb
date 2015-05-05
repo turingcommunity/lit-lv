@@ -1,12 +1,14 @@
-require 'byebug'
-
 class Event < ActiveRecord::Base
-  validates :start_date, 
-            :start_time, 
-            :end_date,  
-            :end_time,
+  extend SimpleCalendar
+  has_calendar
+  validates :starts_at, 
+            :ends_at,  
             :name,
             :description,
             :location, presence: true
   belongs_to :user
+
+  def short_name
+    "#{name[0..12]}..."
+  end
 end

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     elsif user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
       flash[:success] = 'You have successfully logged in.'
-      redirect_to dashboard_index_path
+      redirect_to dashboard_path
     else
       flash[:errors] = 'Invalid login. Please try again.'
       redirect_to :back
