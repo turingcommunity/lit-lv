@@ -8,14 +8,14 @@ class StudentUnauthorizedPagesTest < ActionDispatch::IntegrationTest
     click_button "Log In"
   end
 
-  test "cannot access admin dashboard" do 
+  test "cannot access admin dashboard" do
     login_student
     visit admin_dashboard_path
     assert page.has_content?("Welcome Richard")
     assert page.has_content?("The page you were looking for doesn't exist.")
   end  
 
-  test "cannot access new announcement form" do 
+  test "cannot access new announcement form" do
     login_student
     visit new_admin_announcement_path
     assert page.has_content?("Welcome Richard")

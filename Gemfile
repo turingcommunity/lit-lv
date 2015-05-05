@@ -12,6 +12,8 @@ gem 'bcrypt',                   '~> 3.1.7'
 gem 'bootstrap-sass',           '~> 3.3.3'
 gem 'autoprefixer-rails'
 gem 'simple_calendar', '~> 1.1.0'
+gem 'rails_12factor'
+
 
 group :development, :test do
   gem 'byebug'
