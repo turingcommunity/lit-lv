@@ -1,5 +1,4 @@
 require "test_helper"
-
 class Admin::NewAnnouncementsTest < ActionDispatch::IntegrationTest
   def login_admin
     FactoryGirl.create(:user, :admin)

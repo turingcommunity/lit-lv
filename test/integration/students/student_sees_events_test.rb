@@ -1,7 +1,5 @@
 require "test_helper"
-
 class StudentSeesEventsTest < ActionDispatch::IntegrationTest
-
   def create_events
     3.times do |x|
       date = Time.now
@@ -9,7 +7,7 @@ class StudentSeesEventsTest < ActionDispatch::IntegrationTest
                    description: "Here is a description for event#{x}",
                    location: Faker::Address.street_address,
                    starts_at: date,
-                   ends_at: date) 
+                   ends_at: date)
     end
   end
 

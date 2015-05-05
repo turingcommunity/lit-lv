@@ -1,5 +1,4 @@
 require "test_helper"
-
 class StudentUnauthorizedPagesTest < ActionDispatch::IntegrationTest
   def login_student
     FactoryGirl.create(:user, :default)

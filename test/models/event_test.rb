@@ -1,5 +1,4 @@
 require 'test_helper'
-
 class EventTest < ActiveSupport::TestCase
   attr_reader :event
 

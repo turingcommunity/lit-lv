@@ -1,5 +1,4 @@
 require "test_helper"
-
 class LoginTest < ActionDispatch::IntegrationTest
   test "you can login as a registered user" do
     user = create(:user, :default)
