@@ -6,10 +6,10 @@ class StudentSeesEventsTest < ActionDispatch::IntegrationTest
     3.times do |x|
       date = Time.now
       Event.create(name: "Event#{x}",
-       description: "Here is a description for event#{x}",
-       location: Faker::Address.street_address,
-       starts_at: date,
-       ends_at: date) 
+                   description: "Here is a description for event#{x}",
+                   location: Faker::Address.street_address,
+                   starts_at: date,
+                   ends_at: date) 
     end
   end
 

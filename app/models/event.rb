@@ -1,8 +1,8 @@
 class Event < ActiveRecord::Base
   extend SimpleCalendar
   has_calendar
-  validates :starts_at, 
-            :ends_at,  
+  validates :starts_at,
+            :ends_at,
             :name,
             :description,
             :location, presence: true

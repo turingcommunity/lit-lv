@@ -43,7 +43,7 @@ class Seed
                    description: Faker::Lorem.paragraph,
                    location: Faker::Address.street_address,
                    starts_at: date,
-                   ends_at: date) 
+                   ends_at: date)
     end
   end
 end

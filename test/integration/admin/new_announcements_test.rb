@@ -3,7 +3,7 @@ require 'test_helper'
 class Admin::NewAnnouncementsTest < ActionDispatch::IntegrationTest
   def login_admin
     FactoryGirl.create(:user, :admin)
-    visit '/'
+    visit "/"
     fill_in "session[username]", with: "richard"
     fill_in "session[password]", with: "password"
     click_button "Log In"
