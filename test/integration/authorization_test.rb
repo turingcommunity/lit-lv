@@ -42,5 +42,4 @@ class LoginTest < ActionDispatch::IntegrationTest
     click_link "Logout"
     assert page.has_content?("Successful logout")
   end
-
 end

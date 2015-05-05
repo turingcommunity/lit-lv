@@ -15,13 +15,13 @@ class StudentSeesEventsTest < ActionDispatch::IntegrationTest
 
   def login_student
     FactoryGirl.create(:user, :default)
-    visit '/'
+    visit "/"
     fill_in "session[username]", with: "richard"
     fill_in "session[password]", with: "password"
     click_button "Log In"
   end
 
-  test 'events on dashboard calendar' do
+  test "events on dashboard calendar" do
     create_events
     login_student
     within("tr:nth-child(2)") do
@@ -31,7 +31,7 @@ class StudentSeesEventsTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test 'single event show' do
+  test "single event show" do
     create_events
     login_student
     click_link("Event1")
